@@ -6,6 +6,8 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
+# lock
+*.lock
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -40,6 +42,10 @@ build/Release
 
 # Dependency directories
 node_modules/
+cache/
+deployments/
+artifacts/
+typechain-types/
 jspm_packages/
 
 # Snowpack dependency directory (https://snowpack.dev/)
@@ -53,7 +59,8 @@ web_modules/
 
 # Optional eslint cache
 .eslintcache
-
+# cache
+ cache/
 # Optional stylelint cache
 .stylelintcache
 
@@ -62,6 +69,7 @@ web_modules/
 .rts2_cache_cjs/
 .rts2_cache_es/
 .rts2_cache_umd/
+typechain-types/
 
 # Optional REPL history
 .node_repl_history
@@ -128,3 +136,7 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+.lock
+cache/solidity-files-cache.json
+package-lock.json
+package-lock.json
