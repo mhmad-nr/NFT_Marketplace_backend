@@ -24,6 +24,8 @@ lib-cov
 # Coverage directory used by tools like istanbul
 coverage
 *.lcov
+coverage.json
+
 
 # nyc test coverage
 .nyc_output
@@ -140,3 +142,6 @@ dist
 cache/solidity-files-cache.json
 package-lock.json
 package-lock.json
+
+# vscode 
+/.vscode
