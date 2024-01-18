@@ -30,7 +30,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     await verify(buyMeACoffee.address, args)
   }
 
-  await updateFrontEnd('NftMarketplace', buyMeACoffee.abi, buyMeACoffee.address)
+  // await updateFrontEnd('NftMarketplace', buyMeACoffee.abi, buyMeACoffee.address)
 
   log("----------------------------------------------------------------")
 

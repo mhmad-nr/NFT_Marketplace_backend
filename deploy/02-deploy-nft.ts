@@ -31,7 +31,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
         await verify(NFT.address, args)
     }
 
-    await updateFrontEnd('NFT', NFT.abi, NFT.address)
+    // await updateFrontEnd('NFT', NFT.abi, NFT.address)
 
     log("----------------------------------------------------")
 };

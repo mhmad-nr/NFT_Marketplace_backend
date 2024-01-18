@@ -1,7 +1,7 @@
 import { HardhatEthersSigner } from "@nomicfoundation/hardhat-ethers/signers"
 import { assert, expect } from "chai"
 import { deployments, ethers, getNamedAccounts } from "hardhat"
-import { NftMarketplace, TokenTest } from "../../typechain-types"
+import { NftMarketplace } from "../../typechain-types"
 describe("NftMarketplace", () => {
     let NftMarketplace: NftMarketplace
     let NftContractAddress: string
@@ -14,9 +14,11 @@ describe("NftMarketplace", () => {
     const TOKEN_NOT_APPROVED = 1
 
     beforeEach(async () => {
+
+
         TOKEN_OWNER = (await getNamedAccounts()).deployer;
         TOKEN_NOT_OWNER = (await ethers.getSigners())[2]
-
+        
         await deployments.fixture(["all"])
 
 
@@ -49,6 +51,8 @@ describe("NftMarketplace", () => {
     }
     describe("function 'listNFT'", () => {
         it("must reverted if sender is not owner of nft with 'NftMarketplace__SenderIsNotTheOwner'", async () => {
+            console.log("sadasd");
+
             await expect(
                 NftMarketplace.connect(TOKEN_NOT_OWNER).listNFT(NftContractAddress, TOKEN_APPROVED, EXPECTED_PRICE)
             ).to.be.revertedWithCustomError(NftMarketplace, "NftMarketplace__SenderIsNotTheOwner")
